@@ -43,6 +43,17 @@ let home_pressed = 0
 home_pressed = 0
 time0 = 0
 basic.forever(function () {
+    if (time0 == 0) {
+        if (home_pressed == 1) {
+            music.playMelody("G B A G C5 B A B ", 120)
+        } else {
+            music.playMelody("E B C5 A B G A F ", 120)
+        }
+    } else {
+        music.stopAllSounds()
+    }
+})
+basic.forever(function () {
     if (home_pressed != 1) {
         button_home_pressed()
     } else {
